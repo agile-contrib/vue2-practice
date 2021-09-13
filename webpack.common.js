@@ -34,7 +34,6 @@ module.exports = {
             use: [{
                 loader: "url-loader",
                 options: {
-                    publicPath: "../",
                     name: "build/[path][name].[ext]",
                     limit: 5000
                 }
