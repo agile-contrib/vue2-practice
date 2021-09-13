@@ -7,7 +7,18 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+let userinfo = null;
+
+try {
+    userinfo = JSON.parse(localStorage.getItem('userinfo'));
+} catch (e) {
+    // todo
+}
+
 const state = {
+
+    // 用户信息
+    userinfo
 
 };
 
@@ -52,7 +63,29 @@ state.closeDialog = function (data) {
  * 挂载到全局变量中
  */
 const store = new Vuex.Store({
-    state
+    state,
+    getters: {
+
+        // 判断用户是否登录
+        isLogin: state => {
+            return state.userinfo != null;
+        },
+
+        // 获取用户信息
+        getUserinfo: state => {
+            return state.userinfo;
+        }
+
+    },
+    mutations: {
+
+        // 保存用户信息
+        setUserinfo: (state, userinfo) => {
+            state.userinfo = userinfo;
+            localStorage.setItem('userinfo', JSON.stringify(userinfo));
+        }
+
+    }
 });
 
 export default store;

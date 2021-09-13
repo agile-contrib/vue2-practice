@@ -23,6 +23,10 @@ module.exports = {
             exclude: /node_modules/,
             loader: "babel-loader"
         }, {
+            test: /\.clunch$/,
+            exclude: /node_modules/,
+            loader: ['clunch/loader.js']
+        }, {
             test: /\.(css|scss)$/,
             use: ['vue-style-loader', 'css-loader', 'postcss-loader', './scss-loader.js']
         }, {

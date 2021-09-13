@@ -6,15 +6,15 @@ Vue.use(VueRouter);
 export default new VueRouter({
     routes: [{
 
-        // 首页
-        path: '/home',
-        component: () => import('./pages/home.vue')
+        // 主页面
+        path: '/main',
+        component: () => import('./pages/main.vue')
 
-    },  {
+    }, {
 
         // 默认路由
         path: "/*",
-        redirect: 'home'
+        redirect: 'main'
 
     }]
 });
