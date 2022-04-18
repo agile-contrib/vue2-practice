@@ -4,10 +4,10 @@
   "description": "vue2代码练习",
   "scripts": {
     "start": "npm install && npm run dev",
-    "clean": "hai2007_nodejs -d build",
-    "dev": "node_modules/.bin/webpack-dev-server --config webpack.dev.js",
+    "clean": "nodejs -d build",
+    "dev": "webpack-dev-server --config webpack.dev.js",
     "build": "npm run clean && npm run prod",
-    "prod": "node_modules/.bin/webpack --config webpack.prod.js"
+    "prod": "webpack --config webpack.prod.js"
   },
   "author": "你好2007",
   "license": "MIT",
@@ -26,7 +26,7 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
-    "@hai2007/nodejs": "^1.0.1",
+    "@hai2007/nodejs": "^3.0.1",
     "autoprefixer": "^9.7.3",
     "babel-loader": "^8.1.0",
     "css-loader": "^2.1.1",
